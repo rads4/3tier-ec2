@@ -18,18 +18,31 @@ This setup demonstrates:
 * Traffic routed through AWS Application Load Balancer (ALB)
 * Backend hosted on private EC2 instance
 
-
 ## Architecture
 
-* **Frontend Layer**: HTML (served via Apache)
-* **Application Layer**: PHP-based backend
-* **Database Layer**: MySQL (connected to application)
+1. **Frontend Tier (Presentation Layer)**
+   - HTML/CSS/JavaScript
+   - Served by NGINX web servers
+   - Handles user interface and interactions
+
+2. **Backend Tier (Application Layer)**
+   - PHP API
+   - Processes business logic
+   - Communicates with database
+   - Serves data to frontend
+
+3. **Database Tier (Data Layer)**
+   - MySQL database
+   - Stores application data
+   - Provides data persistence
 
 ## AWS Infrastructure
 
-* **EC2 (Private Instance)**: Hosts application (no public IP)
-* **Security Groups**: Controlled access between layers
-* **Route 53**: Domain routing and DNS management
+- **Web ALB**: Load balancer for distributing traffic to web servers
+- **NGINX Servers**: EC2 instances in an auto-scaling group
+- **App ALB**: Load balancer for distributing traffic to application servers
+- **PHP Servers**: EC2 instances in an auto-scaling group
+- **RDS MySQL**: Managed relational database service
 
 ## Key Features
 
