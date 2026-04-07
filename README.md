@@ -4,6 +4,21 @@
 
 This project demonstrates deployment of a 3-tier web application using AWS infrastructure with secure networking and domain mapping.
 
+## Live Demo
+
+The application is deployed and publicly accessible:
+
+* **Custom Domain**: https://radhikaawasthi.online
+* **Load Balancer DNS**: tier3-app-alb-1324097873.us-east-1.elb.amazonaws.com
+
+This setup demonstrates:
+
+* Domain purchased via Hostinger
+* DNS managed using Route 53
+* Traffic routed through AWS Application Load Balancer (ALB)
+* Backend hosted on private EC2 instance
+
+
 ## Architecture
 
 * **Frontend Layer**: HTML (served via Apache)
@@ -13,7 +28,6 @@ This project demonstrates deployment of a 3-tier web application using AWS infra
 ## AWS Infrastructure
 
 * **EC2 (Private Instance)**: Hosts application (no public IP)
-* **Bastion Host**: Secure SSH access to private EC2
 * **Security Groups**: Controlled access between layers
 * **Route 53**: Domain routing and DNS management
 
@@ -33,6 +47,13 @@ This project demonstrates deployment of a 3-tier web application using AWS infra
 5. Installed Apache & deployed PHP application
 6. Connected application to database
 7. Configured domain using Route 53
+
+## Deployment Highlights
+
+* Application is not directly exposed to the internet
+* Traffic flows: User → ALB → Private EC2 → Application
+* Secure architecture using bastion host and private subnet
+* Domain integrated with Route 53 pointing to ALB
 
 ## Learnings
 
